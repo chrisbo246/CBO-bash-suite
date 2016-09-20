@@ -2,15 +2,17 @@
 
 Run common bash functions from a menu.
 
-> Most of this scripts are under development, so use them **only for inspirational purpose!** They were "developed on Debian" and no testing has been performed on other distributions.
+> Most of this scripts are under development, so use them **only for inspirational purpose**! They were developed **for Debian** and no testing has been performed on other distributions.
 
 ## Requirements
 
-**cbo_helpers.sh** is required by every other scripts so download it first and put it in **/usr/local/bin**.
+**cbo.sh** is required by every other scripts. Download it first and put it in **/usr/local/bin/** (for a global access) or **/home/{user}/bin/**.
 
-**cbo_completion** is only useful to have completion when using scripts as command line. Just check the path at the top of the file, run clickpanic_helpers.sh to install completion then logout/in. 
+<!--
+**cbo_completion** is only useful to have completion when using scripts as command line. Just check the path at the top of the file, run cbo_helpers.sh to install completion then logout/in.
 
 **cbo_menu.sh** is a global menu for all script (in development, don't use it).
+-->
 
 ## Plugins
 
@@ -18,13 +20,26 @@ Every other scripts can be run separately. Download the one you need and put it 
 
 ## Usage
 
-```
-cbo_{plugin}.sh [options] [function]
+```bash
+[sudo] bash cbo.sh [-c|--configure] [-i|--interactive] [--install] [--purge] [--uninstall] [-V|--version] [-h|--help]
+[sudo] bash cbo.sh [available_functions|calc|edit_var|escape_string|in_array|include_once|lstree|progress_bar|spinner|translate] [arg]... [-h|--help]
 ```
 
-Options:
-- **-m|--menu** Run with a select menu.
-- **-h|--help** Know more about available functions.
+##### Options:
+- **-c, --configure**
+    Edit the configuration file with the default editor.
+- **-i, --interactive**
+    Run script with an interactive menu.
+- **--install**
+    Install the completion script, aliases and other stuffs in user folder.
+- **--purge**
+    Delete current configuration file.
+- **--uninstall**
+    Remove tracks of this script in user folder (excepted the config file).
+- **-V, --version**
+    Print version information and exit successfully.
+- **-h, --help**
+    Print this help screen and exit.
 
 ## Contribution
 
